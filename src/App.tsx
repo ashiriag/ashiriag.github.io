@@ -1,18 +1,20 @@
 import React, {useState, useEffect} from "react";
 import {
   Main,
-  Timeline,
-  Expertise,
+  Education,
+  Experience,
   Project,
-  Contact,
   Navigation,
   Footer,
 } from "./components";
+import TemporalProjectDetail from "./components/TemporalProjectDetail";
+import PingPongProjectDetail from "./components/PingPongProjectDetail";
 import FadeIn from './components/FadeIn';
 import './index.scss';
 
 function App() {
     const [mode, setMode] = useState<string>('dark');
+    const [currentView, setCurrentView] = useState<string>('home');
 
     const handleModeChange = () => {
         if (mode === 'dark') {
@@ -24,18 +26,27 @@ function App() {
 
     useEffect(() => {
         window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-      }, []);
+      }, [currentView]);
 
     return (
     <div className={`main-container ${mode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
         <Navigation parentToChild={{mode}} modeChange={handleModeChange}/>
-        <FadeIn transitionDuration={700}>
-            <Main/>
-            <Expertise/>
-            <Timeline/>
-            <Project/>
-            <Contact/>
-        </FadeIn>
+        {currentView === 'home' ? (
+            <FadeIn transitionDuration={700}>
+                <Main/>
+                <Education/>
+                <Experience/>
+                <Project onProjectClick={setCurrentView}/>
+            </FadeIn>
+        ) : currentView === 'temporal' ? (
+            <FadeIn transitionDuration={700}>
+                <TemporalProjectDetail onBack={() => setCurrentView('home')}/>
+            </FadeIn>
+        ) : (
+            <FadeIn transitionDuration={700}>
+                <PingPongProjectDetail onBack={() => setCurrentView('home')}/>
+            </FadeIn>
+        )}
         <Footer />
     </div>
     );
