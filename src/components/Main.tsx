@@ -6,6 +6,12 @@ import '../assets/styles/Main.scss';
 import headshot from '../assets/images/headshot.jpg';
 
 function Main() {
+  const focusAreas = [
+    "Robotics perception",
+    "Autonomous systems",
+    "Motion planning",
+    "Simulation"
+  ];
 
   return (
     <div className="container">
@@ -20,7 +26,13 @@ function Main() {
             <a href="mailto:agoel3@caltech.edu"><EmailIcon/></a>
           </div>
           <h1>Ashiria Goel</h1>
-          <p>CS + Robotics @ Caltech</p>
+          <p className="summary">CS + Robotics @ Caltech</p>
+          <p className="headline">Robotics and software systems focused on perception, planning, and control.</p>
+          <div className="focus-tags">
+            {focusAreas.map((area) => (
+              <span key={area}>{area}</span>
+            ))}
+          </div>
 
           <div className="mobile_social_icons">
             <a href="https://github.com/ashiriag" target="_blank" rel="noreferrer"><GitHubIcon/></a>

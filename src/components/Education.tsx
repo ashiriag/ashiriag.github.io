@@ -8,7 +8,16 @@ function Education() {
             institution: "California Institute of Technology (Caltech)",
             period: "Sept 2023 - Jun 2027",
             logo: "https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Seal_of_the_California_Institute_of_Technology.svg/250px-Seal_of_the_California_Institute_of_Technology.svg.png",
-            description: "Relevant Coursework: Experimental Robotics, Robotic Manipulation, Robotic Planning, Deep Learning, Machine Learning and Data Mining, LLMs for Reasoning, Mathematical Foundations of Computer Science, Decidability and Tractability, Software Design, Computing Systems, Algorithms",
+            coursework: [
+                "Experimental Robotics",
+                "Robotic Manipulation",
+                "Robotic Planning",
+                "Deep Learning",
+                "Machine Learning and Data Mining",
+                "Software Design",
+                "Computing Systems",
+                "Algorithms"
+            ],
             taRoles: [
                 "ME/CS/EE 129: Experimental Robotics"
             ]
@@ -30,9 +39,13 @@ function Education() {
                                         <p className="period">{edu.period}</p>
                                     </div>
                                     <p className="organization">{edu.institution}</p>
-                                    {edu.description && <p className="description">{edu.description}</p>}
+                                    <div className="coursework-tags">
+                                        {edu.coursework.map((course) => (
+                                            <span key={course}>{course}</span>
+                                        ))}
+                                    </div>
                                     {edu.taRoles && edu.taRoles.length > 0 && (
-                                        <div className="description" style={{ marginTop: '10px' }}>
+                                        <div className="description teaching" style={{ marginTop: '10px' }}>
                                             <strong>Teaching Assistant:</strong>
                                             <ul style={{ margin: '6px 0 0 0', paddingLeft: '20px' }}>
                                                 {edu.taRoles.map((role, i) => (

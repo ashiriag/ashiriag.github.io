@@ -13,8 +13,7 @@
   
 .projects-container .projects-grid .project {
     text-align: left;
-    border-left: 4px solid;
-    border-image: linear-gradient(180deg, #667eea 0%, #764ba2 100%) 1;
+    border-left: 4px solid #8e5cff;
     border-radius: 8px;
     padding: 20px;
     background: var(--card-background);
@@ -24,7 +23,7 @@
 
     &:hover {
         transform: translateX(10px);
-        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        box-shadow: 0 5px 20px rgba(142, 92, 255, 0.25);
     }
 
     img {
@@ -45,7 +44,8 @@
         flex-grow: 1;
         color: inherit;
         font-size: 0.95rem;
-        line-height: 1.5;
+        line-height: 1.55;
+        margin-bottom: 0;
     }
 
     .project-skills {
@@ -60,9 +60,9 @@
         font-weight: 600;
         padding: 4px 10px;
         border-radius: 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #4f3a7a;
         color: #fff;
-        letter-spacing: 0.02em;
+        letter-spacing: 0;
         white-space: nowrap;
     }
 }
@@ -86,7 +86,6 @@
 .dark-mode {
     .projects-container .projects-grid .project {
         background: rgba(255, 255, 255, 0.05);
-        border-color: rgba(102, 126, 234, 0.2);
         color: #e0e0e0;
 
         h2 {
@@ -98,7 +97,7 @@
         }
 
         &:hover {
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 20px rgba(142, 92, 255, 0.22);
         }
     }
 }
@@ -107,7 +106,6 @@
 .light-mode {
     .projects-container .projects-grid .project {
         background: #f9f9f9;
-        border-color: rgba(102, 126, 234, 0.2);
         color: #333;
 
         h2 {
@@ -119,7 +117,7 @@
         }
 
         &:hover {
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 5px 20px rgba(142, 92, 255, 0.18);
         }
     }
 }

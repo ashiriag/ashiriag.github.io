@@ -113,7 +113,26 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .about-section {
-    background-image: url("./assets/images/bg-light.png");
+    background-color: #eef3f5;
+    background-image:
+      radial-gradient(circle at 18% 46%, rgba(142, 92, 255, 0.22) 0%, rgba(142, 92, 255, 0.1) 24%, rgba(142, 92, 255, 0) 43%),
+      linear-gradient(120deg, rgba(142, 92, 255, 0.16) 0%, rgba(142, 92, 255, 0.05) 34%, rgba(238, 243, 245, 0) 58%),
+      linear-gradient(135deg, #f7fafb 0%, #e8eff2 52%, #d9e5e9 100%);
+  }
+
+  .about-section::before {
+    background-image:
+      linear-gradient(rgba(13, 17, 22, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(13, 17, 22, 0.06) 1px, transparent 1px),
+      linear-gradient(115deg, transparent 0 44%, rgba(142, 92, 255, 0.13) 44% 44.4%, transparent 44.4% 100%),
+      linear-gradient(65deg, transparent 0 57%, rgba(13, 17, 22, 0.08) 57% 57.3%, transparent 57.3% 100%);
+  }
+
+  .about-section::after {
+    background:
+      linear-gradient(90deg, rgba(247, 250, 251, 0.05) 0%, rgba(247, 250, 251, 0.66) 100%),
+      linear-gradient(150deg, transparent 0 34%, rgba(13, 17, 22, 0.06) 34% 34.25%, transparent 34.25% 100%),
+      linear-gradient(28deg, transparent 0 62%, rgba(142, 92, 255, 0.12) 62% 62.25%, transparent 62.25% 100%);
   }
 
   .skills-container svg {
